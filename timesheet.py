@@ -101,7 +101,7 @@ if f1 is not None:
     sum = round(final_df['Hours'].sum(),3)
 
     st.subheader("Total Sums of Hours:")
-    styled_sum = f"<span style='font-size: 32px; color: yellow;'>{sum}</span>"
+    styled_sum = f"<span style='font-size: 32px; color: red;'>{sum}</span>"
     st.markdown(styled_sum, unsafe_allow_html=True)
 
     if st.button("Download Data as Excel"):
