@@ -82,6 +82,11 @@ if f1 is not None:
     ab.reset_index(drop=True, inplace=True)
     ab.index +=1
 
+    ab['Job'] = ab['Job'].astype(str)
+    ab['Task'] = ab['Task'].astype(str)
+    ab['Service'] = ab['Service'].astype(str)
+    ab['Analysis'] = ab['Analysis'].astype(str)
+
     ab['Job/Tasks'] = ab['Job'].str.cat(ab['Task'].astype(str), sep='/')
     ab['Services/Analysis'] = ab['Service'].str.cat(ab['Analysis'], sep='/')
     ab.drop(['Service', 'Task', 'Analysis', 'Job'], axis=1, inplace=True)
